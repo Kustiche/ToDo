@@ -12,6 +12,61 @@
     <title>ToDo</title>
   </head>
   <body>
+    <section class="todo">
+      <div class="container">
+        <div class="todo__wrap">
+          <h1 class="todo__title">Список задач</h1>
+          <div class="todo__priorities">
+            <h2 class="todo__subtitle">Высокий приоритет</h2>
+            <div class="todo__inner">
+              <form class="form" action="#">
+                <input
+                  class="form__input-text input"
+                  type="text"
+                  placeholder="Добавить задачу..."
+                />
+              </form>
+              <div class="todo__inner-tasks">
+                <div class="todo__task">
+                  <div class="todo__task-left">
+                    <input class="todo__btn btn-reset" type="checkbox"></input>
+                    <p class="todo__text">Сверстать сайт</p>
+                  </div>
+                  <div class="todo__task-right">
+                    <span class="todo__task-time">12.02.23</span>
+                    <button class="todo__btn-close btn-reset"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="todo__priorities">
+            <h2 class="todo__subtitle">Низкий приоритет</h2>
+            <div class="todo__inner">
+              <form class="form" action="#">
+                <input
+                  class="form__input-text input"
+                  type="text"
+                  placeholder="Добавить задачу..."
+                />
+              </form>
+              <div class="todo__inner-tasks">
+                <div class="todo__task">
+                  <div class="todo__task-left">
+                    <input class="todo__btn btn-reset" type="checkbox"></input>
+                    <p class="todo__text">Проведать друзей</p>
+                  </div>
+                  <div class="todo__task-right">
+                    <span class="todo__task-time">12.02.23</span>
+                    <button class="todo__btn-close btn-reset"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>
