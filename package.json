@@ -1,0 +1,20 @@
+{
+  "name": "todo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "sass": "^1.64.1",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "moment": "^2.29.4"
+  }
+}

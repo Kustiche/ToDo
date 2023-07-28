@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Seoulnamsan";
+  src: url("resources/fonts/Seoulnamsan-ceb.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$white: #ffffff;
+$black: #000000;
+$mine-shaft: #2F2F2F;
+$silver-chalice: #A1A1A1;
+$barberry: #E7E61A;
+$dove-gray: #707070;
+
+@import "libs/normalize";
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: $black;
+}
+
+.container{
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1310px;
+}
+
+.btn-reset {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
