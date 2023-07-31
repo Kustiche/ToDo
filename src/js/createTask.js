@@ -2,13 +2,17 @@ import moment from 'moment/moment.js';
 import { render } from './render.js';
 import { tasks } from './tasksArray.js';
 import { innersTasks, templateTask } from './view.js';
+import { newTasksArray } from './deleteTask.js';
 
 // Добавление задачи в массив
 
-function Task(text, priority) {
+let index = 0;
+
+function Task(text, priority, index) {
 	this.text = text;
 	this.priority = priority;
 	this.time = moment().format('DD.MM.YY');
+	this.index = index;
 }
 
 export function addTaskArray(e) {
@@ -19,9 +23,16 @@ export function addTaskArray(e) {
 	const innerInput = form.querySelector('.form__inner-input');
 
 	if (input.value !== '') {
-		const newTask = new Task(input.value, subtitle.textContent);
+		const newTask = new Task(input.value, subtitle.textContent, index);
 
-		tasks.push(newTask);
+		++index;
+
+		if (newTasksArray !== undefined) {
+			tasks.push(newTask);
+			newTasksArray.push(newTask);
+		} else {
+			tasks.push(newTask);
+		}
 
 		render();
 
@@ -39,8 +50,9 @@ export function addTaskArray(e) {
 
 // Создание задачи
 
-export function createTask(text, priority, time) {
+export function createTask(text, priority, time, index) {
 	const item = templateTask.content.cloneNode(true);
+	const task = item.querySelector('.todo__task');
 	const taskText = item.querySelector('.todo__text');
 	const taskTime = item.querySelector('.todo__task-time');
 
@@ -49,6 +61,7 @@ export function createTask(text, priority, time) {
 		const subtitle = innerPriority.querySelector('.todo__subtitle');
 
 		if (subtitle.textContent === priority) {
+			task.dataset.index = index;
 			taskText.textContent = text;
 			taskTime.textContent = time;
 
