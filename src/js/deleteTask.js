@@ -21,7 +21,6 @@ export function deleteTask(e) {
 
 				++index;
 			});
-			console.log(newTasksArray);
 		} else {
 			newTasksArray = tasks.filter(
 				(item) => item.index !== Number(task.dataset.index)
