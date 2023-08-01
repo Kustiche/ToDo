@@ -6,7 +6,7 @@ import { newTasksArray } from './deleteTask.js';
 
 // Добавление задачи в массив
 
-let index = 0;
+let index = JSON.parse(localStorage.getItem('index')) ?? 0;
 
 function Task(text, priority, index) {
 	this.text = text;
@@ -23,18 +23,25 @@ export function addTaskArray(e) {
 	const innerInput = form.querySelector('.form__inner-input');
 
 	if (input.value !== '') {
+		if (newTasksArray !== null) {
+			index = newTasksArray.length;
+		}
+
 		const newTask = new Task(input.value, subtitle.textContent, index);
 
-		++index;
-
-		if (newTasksArray !== undefined) {
+		if (newTasksArray !== null) {
 			tasks.push(newTask);
 			newTasksArray.push(newTask);
+
+			localStorage.setItem('newTasksArray', JSON.stringify(newTasksArray));
 		} else {
 			tasks.push(newTask);
+			++index;
 		}
 
 		render();
+		localStorage.setItem('index', JSON.stringify(index));
+		localStorage.setItem('tasksArray', JSON.stringify(tasks));
 
 		input.classList.remove('form__input-text--padding-error');
 		innerInput.classList.remove('form__inner-input--padding-error');

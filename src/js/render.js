@@ -12,11 +12,11 @@ export function render() {
 		item.innerHTML = '';
 	});
 
-	if (newTasksArray !== undefined) {
+	if (newTasksArray !== null) {
 		newTasksArray.forEach((task) => {
 			createTask(task.text, task.priority, task.time, index++);
 		});
-	} else {
+	} else if (newTasksArray === null) {
 		tasks.forEach((task) => {
 			createTask(task.text, task.priority, task.time, index++);
 		});
