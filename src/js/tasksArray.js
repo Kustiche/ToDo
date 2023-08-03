@@ -1,1 +1,1 @@
-export const tasks = JSON.parse(localStorage.getItem('tasksArray')) ?? [];
+export const tasksArray = JSON.parse(localStorage.getItem('tasksArray')) ?? [];

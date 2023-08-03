@@ -195,6 +195,20 @@ body {
 		margin: 0;
 		font-size: 16px;
 		line-height: normal;
+
+		&--performed {
+			color: $silver-chalice;
+			position: relative;
+
+			&::after {
+				position: absolute;
+				content: '';
+				width: 106%;
+				border-top: 1px solid $silver-chalice;
+				top: 50%;
+				left: -3%;
+			}
+		}
 	}
 
 	&__task-right {

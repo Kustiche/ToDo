@@ -1,6 +1,6 @@
 import { createTask } from './createTask.js';
 import { newTasksArray } from './deleteTask.js';
-import { tasks } from './tasksArray.js';
+import { tasksArray } from './tasksArray.js';
 import { innersTasks } from './view.js';
 
 // Рендер
@@ -14,11 +14,11 @@ export function render() {
 
 	if (newTasksArray !== null) {
 		newTasksArray.forEach((task) => {
-			createTask(task.text, task.priority, task.time, index++);
+			createTask(task.text, task.priority, task.time, index++, task.status);
 		});
 	} else if (newTasksArray === null) {
-		tasks.forEach((task) => {
-			createTask(task.text, task.priority, task.time, index++);
+		tasksArray.forEach((task) => {
+			createTask(task.text, task.priority, task.time, index++, task.status);
 		});
 	}
 }

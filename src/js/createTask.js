@@ -1,6 +1,6 @@
 import moment from 'moment/moment.js';
 import { render } from './render.js';
-import { tasks } from './tasksArray.js';
+import { tasksArray } from './tasksArray.js';
 import { innersTasks, templateTask } from './view.js';
 import { newTasksArray } from './deleteTask.js';
 
@@ -13,6 +13,7 @@ function Task(text, priority, index) {
 	this.priority = priority;
 	this.time = moment().format('DD.MM.YY');
 	this.index = index;
+	this.status = false;
 }
 
 export function addTaskArray(e) {
@@ -30,18 +31,18 @@ export function addTaskArray(e) {
 		const newTask = new Task(input.value, subtitle.textContent, index);
 
 		if (newTasksArray !== null) {
-			tasks.push(newTask);
+			tasksArray.push(newTask);
 			newTasksArray.push(newTask);
 
 			localStorage.setItem('newTasksArray', JSON.stringify(newTasksArray));
 		} else {
-			tasks.push(newTask);
+			tasksArray.push(newTask);
 			++index;
 		}
 
 		render();
 		localStorage.setItem('index', JSON.stringify(index));
-		localStorage.setItem('tasksArray', JSON.stringify(tasks));
+		localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 
 		input.classList.remove('form__input-text--padding-error');
 		innerInput.classList.remove('form__inner-input--padding-error');
@@ -57,11 +58,12 @@ export function addTaskArray(e) {
 
 // Создание задачи
 
-export function createTask(text, priority, time, index) {
+export function createTask(text, priority, time, index, status) {
 	const item = templateTask.content.cloneNode(true);
 	const task = item.querySelector('.todo__task');
 	const taskText = item.querySelector('.todo__text');
 	const taskTime = item.querySelector('.todo__task-time');
+	const btnChangeStatus = item.querySelector('.todo__btn');
 
 	innersTasks.forEach((inner) => {
 		const innerPriority = inner.closest('.todo__priorities');
@@ -71,6 +73,14 @@ export function createTask(text, priority, time, index) {
 			task.dataset.index = index;
 			taskText.textContent = text;
 			taskTime.textContent = time;
+
+			if (status === true) {
+				taskText.classList.add('todo__text--performed');
+				btnChangeStatus.checked = true;
+			} else {
+				taskText.classList.remove('todo__text--performed');
+				btnChangeStatus.checked = false;
+			}
 
 			inner.append(item);
 		}
