@@ -3,6 +3,7 @@ import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
 import { innersTasks, templateTask } from './view.js';
 import { newTasksArray } from './deleteTask.js';
+import { objectCookies } from './cookies.js';
 
 // Добавление задачи в массив
 
@@ -41,12 +42,25 @@ export function addTaskArray(e) {
 		}
 
 		render();
+
+		input.value = '';
+
 		localStorage.setItem('index', JSON.stringify(index));
 		localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 
 		input.classList.remove('form__input-text--padding-error');
 		innerInput.classList.remove('form__inner-input--padding-error');
 		form.classList.remove('form--padding-error');
+
+		if (subtitle.textContent === 'Высокий приоритет') {
+			document.cookie = `highPriorityTask=${
+				objectCookies.highPriorityTask
+			}; secure; expires=${new Date(0)}`;
+		} else if (subtitle.textContent === 'Низкий приоритет') {
+			document.cookie = `lowPriorityTask=${
+				objectCookies.lowPriorityTask
+			}; secure; expires=${new Date(0)}`;
+		}
 	} else {
 		input.classList.add('form__input-text--padding-error');
 		innerInput.classList.add('form__inner-input--padding-error');

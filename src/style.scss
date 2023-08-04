@@ -12,6 +12,7 @@ $silver-chalice: #a1a1a1;
 $barberry: #e7e61a;
 $dove-gray: #707070;
 $mine: #222222;
+$red: #f90614;
 
 @import 'libs/normalize';
 
@@ -274,7 +275,7 @@ body {
 				content: '*Пустое поле';
 				font-size: 12px;
 				line-height: 12px;
-				color: red;
+				color: $red;
 				bottom: -4px;
 				left: 21px;
 				transform: translateY(100%);
@@ -292,7 +293,47 @@ body {
 		line-height: normal;
 
 		&--padding-error {
-			border: 1px solid red;
+			border: 1px solid $red;
+		}
+	}
+}
+
+.cookies {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 15px;
+	width: 100%;
+	max-width: 460px;
+	background-color: $mine-shaft;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px 0px $silver-chalice;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+
+	&--hidden {
+		display: none;
+	}
+
+	&__text {
+		margin: 0;
+		margin-bottom: 10px;
+		font-size: 20px;
+		line-height: normal;
+	}
+
+	&__btn {
+		padding: 5px 10px;
+		background-color: $mine;
+		border-radius: 10px;
+		font-size: 20px;
+		line-height: normal;
+		transition: all 0.4s;
+
+		&:hover {
+			box-shadow: 0px 0px 15px 0px $silver-chalice;
+			transform: scale(0.95);
 		}
 	}
 }
