@@ -1,5 +1,5 @@
-import { dataTransferNewTasksArray, newTasksArray } from './deleteTask.js';
 import { render } from './render.js';
+import { tasksArray } from './tasksArray.js';
 
 // Изменение статуса задачи (Выполнена/не выполнена)
 
@@ -10,23 +10,17 @@ export function changeStatusTask(e) {
 	if (isBtnChangeStatus) {
 		const task = btnChangeStatus.closest('.todo__task');
 
-		if (newTasksArray === null) {
-			dataTransferNewTasksArray();
+		const isTasksArrayTrue =
+			tasksArray[Number(task.dataset.index)].status !== true;
+
+		if (isTasksArrayTrue) {
+			tasksArray[Number(task.dataset.index)].status = true;
+		} else {
+			tasksArray[Number(task.dataset.index)].status = false;
 		}
 
-		newTasksArray.forEach((item) => {
-			if (item.index === Number(task.dataset.index) && item.status !== true) {
-				item.status = true;
-			} else if (
-				item.index === Number(task.dataset.index) &&
-				item.status !== false
-			) {
-				item.status = false;
-			}
-		});
-
 		render();
-		localStorage.setItem('newTasksArray', JSON.stringify(newTasksArray));
+		localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 	}
 }
 

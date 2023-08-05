@@ -1,0 +1,33 @@
+import { render } from './render.js';
+import { tasksArray } from './tasksArray.js';
+
+export function openFunctional(e) {
+	const isBtnFunctional =
+		e.target.className === 'todo__inner-functional' ||
+		e.target.className === 'todo__btn-functional btn-reset';
+
+	if (isBtnFunctional) {
+		const innerFunctional = e.target.closest('.todo__inner-functional');
+		const functional = innerFunctional.querySelector('.todo__functional');
+
+		if (functional.style.display !== 'flex') {
+			functional.style.display = 'flex';
+		} else {
+			functional.style.display = null;
+		}
+	}
+}
+
+export function changePriority(e) {
+	const task = e.target.closest('.todo__task');
+	const btnsPriorities = task.querySelectorAll('.todo__btn-prority');
+
+	btnsPriorities.forEach((item) => {
+		if (e.target === item) {
+			tasksArray[Number(task.dataset.index)].priority = item.textContent.trim();
+
+			render();
+			localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
+		}
+	});
+}

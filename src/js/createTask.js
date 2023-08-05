@@ -2,7 +2,6 @@ import moment from 'moment/moment.js';
 import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
 import { innersTasks, templateTask } from './view.js';
-import { newTasksArray } from './deleteTask.js';
 import { objectCookies } from './cookies.js';
 
 // Добавление задачи в массив
@@ -25,21 +24,14 @@ export function addTaskArray(e) {
 	const innerInput = form.querySelector('.form__inner-input');
 
 	if (input.value !== '') {
-		if (newTasksArray !== null) {
-			index = newTasksArray.length;
+		if (tasksArray !== null) {
+			index = tasksArray.length;
 		}
 
 		const newTask = new Task(input.value, subtitle.textContent, index);
 
-		if (newTasksArray !== null) {
-			tasksArray.push(newTask);
-			newTasksArray.push(newTask);
-
-			localStorage.setItem('newTasksArray', JSON.stringify(newTasksArray));
-		} else {
-			tasksArray.push(newTask);
-			++index;
-		}
+		tasksArray.push(newTask);
+		++index;
 
 		render();
 

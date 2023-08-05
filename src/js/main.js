@@ -8,6 +8,7 @@ import {
 	openEditingTaskModal,
 } from './editingTask.js';
 import { render } from './render.js';
+import { changePriority, openFunctional } from './taskFunctional.js';
 import {
 	cookieBtn,
 	cookieMessage,
@@ -76,6 +77,8 @@ innersTasks.forEach((inner) => {
 		deleteTask(e);
 		changeStatusTask(e);
 		openEditingTaskModal(e);
+		openFunctional(e);
+		changePriority(e);
 	});
 });
 
