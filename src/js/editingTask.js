@@ -4,6 +4,10 @@ import { render } from './render.js';
 
 let indexTask = 0;
 
+export function closeEditingTaskModal() {
+	window.modalTaskEditing.close();
+}
+
 export function openEditingTaskModal(e) {
 	const isTask =
 		e.target.className !== 'todo__btn btn-reset' &&

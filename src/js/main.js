@@ -2,13 +2,18 @@ import { changeStatusTask } from './changeStatusTask.js';
 import { recordCookie, useCookie } from './cookies.js';
 import { addTaskArray } from './createTask.js';
 import { deleteTask } from './deleteTask.js';
-import { editingTask, openEditingTaskModal } from './editingTask.js';
+import {
+	closeEditingTaskModal,
+	editingTask,
+	openEditingTaskModal,
+} from './editingTask.js';
 import { render } from './render.js';
 import {
 	cookieBtn,
 	cookieMessage,
 	forms,
 	innersTasks,
+	modalBtnClose,
 	modalForm,
 } from './view.js';
 
@@ -48,6 +53,10 @@ if (permissionCollectCookies === true) {
 }
 
 loadingLocalData();
+
+modalBtnClose.addEventListener('click', () => {
+	closeEditingTaskModal();
+});
 
 cookieBtn.addEventListener('click', () => {
 	activationPermissionCookie();

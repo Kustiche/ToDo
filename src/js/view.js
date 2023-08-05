@@ -5,3 +5,4 @@ export const inputs = document.querySelectorAll('.form__input-text');
 export const cookieMessage = document.querySelector('.cookies');
 export const cookieBtn = document.querySelector('.cookies__btn');
 export const modalForm = document.querySelector('.modal__form');
+export const modalBtnClose = document.querySelector('.modal__btn-close');

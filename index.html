@@ -46,13 +46,6 @@
 							<div class="todo__inner-tasks"></div>
 						</div>
 					</div>
-					<div class="cookies">
-						<p class="cookies__text">
-							Этот сайт использует файлы cookie для хранения данных. Продолжая
-							использовать сайт вы даёте согласие на работу с этими файлами.
-						</p>
-						<button class="cookies__btn btn-reset">Принимаю</button>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -69,7 +62,9 @@
 			</div>
 		</template>
 		<dialog class="modal" id="modalTaskEditing">
-			<button class="modal__btn-close btn-reset"></button>
+			<div class="modal__inner-btn-close">
+				<button class="modal__btn-close btn-reset"></button>
+			</div>
 			<h2 class="modal__title">Редактирование задачи</h2>
 			<form class="modal__form" action="#">
 				<div class="modal__inner-input inner-input">
@@ -82,6 +77,14 @@
 				<button class="modal__btn btn-reset">Сохранить</button>
 			</form>
 		</dialog>
+		<div class="cookies">
+			<p class="cookies__text">Наш сайт использует куки.</p>
+			<p class="cookies__text">
+				Продолжая им пользоваться, вы соглашаетесь на обработку персональных
+				данных в соответствии с
+			</p>
+			<button class="cookies__btn btn-reset">Принимаю</button>
+		</div>
 		<script src="src/js/main.js" type="module"></script>
 	</body>
 </html>
