@@ -10,8 +10,8 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ToDo</title>
-		<script type="module" crossorigin src="./assets/index-a3f79dce.js"></script>
-		<link rel="stylesheet" href="./assets/index-ad39bf4c.css">
+		<script type="module" crossorigin src="./assets/index-fd180f3b.js"></script>
+		<link rel="stylesheet" href="./assets/index-5e5810bc.css">
 	</head>
 	<body>
 		<section class="todo">
@@ -60,10 +60,26 @@
 				<div class="todo__task-right">
 					<span class="todo__task-time">12.02.23</span>
 					<button class="todo__btn-delete btn-reset"></button>
+					<div class="todo__inner-functional">
+						<button class="todo__btn-functional btn-reset"></button>
+						<div class="todo__functional">
+							<div class="todo__inner-priority">
+								<h3 class="todo__caption">Приоритеты</h3>
+								<div class="todo__inner-btn-priority">
+									<button class="todo__btn-prority btn-reset">
+										Высокий приоритет
+									</button>
+									<button class="todo__btn-prority btn-reset">
+										Низкий приоритет
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</template>
-		<dialog class="modal" id="modalTaskEditing">
+		<dialog class="modal-editing-task modal" id="modalTaskEditing">
 			<div class="modal__inner-btn-close">
 				<button class="modal__btn-close btn-reset"></button>
 			</div>
@@ -82,9 +98,10 @@
 		<div class="cookies">
 			<p class="cookies__text">Наш сайт использует куки.</p>
 			<p class="cookies__text">
-				Продолжая им пользоваться, вы соглашаетесь на обработку персональных
-				данных в соответствии с
+				Продолжая им&nbsp;пользоваться, вы&nbsp;соглашаетесь на обработку
+				персональных данных в соответствии с
 			</p>
+			<a class="cookies__link" href="#">Политикой конфиденциальности</a>
 			<button class="cookies__btn btn-reset">Принимаю</button>
 		</div>
 		
