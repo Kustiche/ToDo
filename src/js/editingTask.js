@@ -1,6 +1,7 @@
 import moment from 'moment';
-import { newTasksArray } from './deleteTask.js';
+import { dataTransferNewTasksArray, newTasksArray } from './deleteTask.js';
 import { render } from './render.js';
+import { tasksArray } from './tasksArray.js';
 
 let indexTask = 0;
 
@@ -28,6 +29,11 @@ export function openEditingTaskModal(e) {
 export function editingTask(e) {
 	const input = e.target.querySelector('.modal__input-text');
 	const time = moment().format('DD.MM.YY');
+
+	if (newTasksArray === null) {
+		dataTransferNewTasksArray();
+	}
+
 	newTasksArray[indexTask].text = input.value;
 	newTasksArray[indexTask].time = time;
 
