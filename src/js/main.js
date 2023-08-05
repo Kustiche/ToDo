@@ -2,8 +2,15 @@ import { changeStatusTask } from './changeStatusTask.js';
 import { recordCookie, useCookie } from './cookies.js';
 import { addTaskArray } from './createTask.js';
 import { deleteTask } from './deleteTask.js';
+import { editingTask, openEditingTaskModal } from './editingTask.js';
 import { render } from './render.js';
-import { cookieBtn, cookieMessage, forms, innersTasks } from './view.js';
+import {
+	cookieBtn,
+	cookieMessage,
+	forms,
+	innersTasks,
+	modalForm,
+} from './view.js';
 
 const isLocalStorage = JSON.parse(localStorage.getItem('tasksArray')) !== null;
 let permissionCollectCookies =
@@ -59,5 +66,12 @@ innersTasks.forEach((inner) => {
 	inner.addEventListener('click', (e) => {
 		deleteTask(e);
 		changeStatusTask(e);
+		openEditingTaskModal(e);
 	});
+});
+
+modalForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	editingTask(e);
 });

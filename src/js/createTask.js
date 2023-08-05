@@ -48,8 +48,8 @@ export function addTaskArray(e) {
 		localStorage.setItem('index', JSON.stringify(index));
 		localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 
-		input.classList.remove('form__input-text--padding-error');
-		innerInput.classList.remove('form__inner-input--padding-error');
+		input.classList.remove('input--padding-error');
+		innerInput.classList.remove('inner-input--padding-error');
 		form.classList.remove('form--padding-error');
 
 		if (subtitle.textContent === 'Высокий приоритет') {
@@ -62,8 +62,8 @@ export function addTaskArray(e) {
 			}; secure; expires=${new Date(0)}`;
 		}
 	} else {
-		input.classList.add('form__input-text--padding-error');
-		innerInput.classList.add('form__inner-input--padding-error');
+		input.classList.add('input--padding-error');
+		innerInput.classList.add('inner-input--padding-error');
 		form.classList.add('form--padding-error');
 	}
 }

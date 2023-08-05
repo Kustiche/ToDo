@@ -63,6 +63,36 @@ body {
 
 .input {
 	all: unset;
+	padding: 15px;
+	width: 93%;
+	border-radius: 1000px;
+	border: 1px solid $silver-chalice;
+	box-shadow: 0px 0px 15px 0px $silver-chalice;
+	font-size: 18px;
+	line-height: normal;
+
+	&--padding-error {
+		border: 1px solid $red;
+	}
+}
+
+.inner-input {
+	width: 100%;
+	border-radius: 1000px;
+
+	&--padding-error {
+		position: relative;
+		&::after {
+			position: absolute;
+			content: '*Пустое поле';
+			font-size: 12px;
+			line-height: 12px;
+			color: $red;
+			bottom: -4px;
+			left: 21px;
+			transform: translateY(100%);
+		}
+	}
 }
 
 .todo {
@@ -265,36 +295,9 @@ body {
 	}
 
 	&__inner-input {
-		width: 100%;
-		border-radius: 1000px;
-
-		&--padding-error {
-			position: relative;
-			&::after {
-				position: absolute;
-				content: '*Пустое поле';
-				font-size: 12px;
-				line-height: 12px;
-				color: $red;
-				bottom: -4px;
-				left: 21px;
-				transform: translateY(100%);
-			}
-		}
 	}
 
 	&__input-text {
-		padding: 15px;
-		width: 93%;
-		border-radius: 1000px;
-		border: 1px solid $silver-chalice;
-		box-shadow: 0px 0px 15px 0px $silver-chalice;
-		font-size: 18px;
-		line-height: normal;
-
-		&--padding-error {
-			border: 1px solid $red;
-		}
 	}
 }
 
@@ -335,5 +338,51 @@ body {
 			box-shadow: 0px 0px 15px 0px $silver-chalice;
 			transform: scale(0.95);
 		}
+	}
+}
+
+.modal {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 30px;
+	background-color: $mine-shaft;
+	border: none;
+	box-shadow: 0px 0px 15px 0px $silver-chalice;
+	position: relative;
+
+	&__btn-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__title {
+		margin: 0;
+		margin-bottom: 20px;
+		font-size: 28px;
+		font-weight: 400;
+		line-height: normal;
+		text-align: center;
+		color: $white;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__inner-input {
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	&__input-text {
+		width: 91%;
+		color: $white;
+	}
+
+	&__btn {
+		color: $white;
 	}
 }

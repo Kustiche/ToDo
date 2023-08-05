@@ -20,7 +20,7 @@
 						<h2 class="todo__subtitle">Высокий приоритет</h2>
 						<div class="todo__inner">
 							<form class="form" action="#">
-								<div class="form__inner-input">
+								<div class="form__inner-input inner-input">
 									<input
 										class="form__input-text input"
 										type="text"
@@ -35,7 +35,7 @@
 						<h2 class="todo__subtitle">Низкий приоритет</h2>
 						<div class="todo__inner">
 							<form class="form" action="#">
-								<div class="form__inner-input">
+								<div class="form__inner-input inner-input">
 									<input
 										class="form__input-text input"
 										type="text"
@@ -68,6 +68,20 @@
 				</div>
 			</div>
 		</template>
+		<dialog class="modal" id="modalTaskEditing">
+			<button class="modal__btn-close btn-reset"></button>
+			<h2 class="modal__title">Редактирование задачи</h2>
+			<form class="modal__form" action="#">
+				<div class="modal__inner-input inner-input">
+					<input
+						class="modal__input-text input"
+						type="text"
+						placeholder="Добавить задачу..."
+					/>
+				</div>
+				<button class="modal__btn btn-reset">Сохранить</button>
+			</form>
+		</dialog>
 		<script src="src/js/main.js" type="module"></script>
 	</body>
 </html>
