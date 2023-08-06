@@ -49,14 +49,25 @@
 				</div>
 			</div>
 		</section>
+		<div class="sidebar">
+			<button class="sidebar__btn btn-reset"></button>
+			<h2 class="sidebar__subtitle">Удалённые задачи</h2>
+			<div class="sidebar__inner-tasks">
+				<div class="sidebar__task">
+					<button class="sidebar__btn-return btn-reset"></button>
+					<p class="sidebar__text">Купить соус к салату</p>
+					<span class="sidebar__time">06.08.23</span>
+				</div>
+			</div>
+		</div>
 		<template id="task">
 			<div class="todo__task">
 				<div class="todo__task-left">
 					<input class="todo__btn btn-reset" type="checkbox" />
-					<p class="todo__text">Проведать друзей</p>
+					<p class="todo__text"></p>
 				</div>
 				<div class="todo__task-right">
-					<span class="todo__task-time">12.02.23</span>
+					<span class="todo__task-time"></span>
 					<button class="todo__btn-delete btn-reset"></button>
 					<div class="todo__inner-functional">
 						<button class="todo__btn-functional btn-reset"></button>
@@ -75,6 +86,13 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</template>
+		<template id="remoteTask">
+			<div class="sidebar__task">
+				<button class="sidebar__btn-return btn-reset"></button>
+				<p class="sidebar__text"></p>
+				<span class="sidebar__time"></span>
 			</div>
 		</template>
 		<dialog class="modal-editing-task modal" id="modalTaskEditing">
