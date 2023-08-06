@@ -1,18 +1,20 @@
 import moment from 'moment/moment.js';
 import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
-import { innersTasks, templateTask } from './view.js';
+import {
+	innersTasks,
+	sideBarInnerTasks,
+	templateRemoteTask,
+	templateTask,
+} from './view.js';
 import { objectCookies } from './cookies.js';
 
 // Добавление задачи в массив
 
-let index = JSON.parse(localStorage.getItem('index')) ?? 0;
-
-function Task(text, priority, index) {
+function Task(text, priority) {
 	this.text = text;
 	this.priority = priority;
 	this.time = moment().format('DD.MM.YY');
-	this.index = index;
 	this.status = false;
 }
 
@@ -24,20 +26,14 @@ export function addTaskArray(e) {
 	const innerInput = form.querySelector('.form__inner-input');
 
 	if (input.value !== '') {
-		if (tasksArray !== null) {
-			index = tasksArray.length;
-		}
-
-		const newTask = new Task(input.value, subtitle.textContent, index);
+		const newTask = new Task(input.value, subtitle.textContent);
 
 		tasksArray.push(newTask);
-		++index;
 
 		render();
 
 		input.value = '';
 
-		localStorage.setItem('index', JSON.stringify(index));
 		localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 
 		input.classList.remove('input--padding-error');
@@ -94,3 +90,20 @@ export function createTask(text, priority, time, index, status) {
 }
 
 // Создание задачи
+
+// Создание удалённой задачи
+
+export function createRemoteTask(text, time, index) {
+	const item = templateRemoteTask.content.cloneNode(true);
+	const task = item.querySelector('.sidebar__task');
+	const taskText = item.querySelector('.sidebar__text');
+	const taskTime = item.querySelector('.sidebar__time');
+
+	task.dataset.index = index;
+	taskText.textContent = text;
+	taskTime.textContent = time;
+
+	sideBarInnerTasks.append(item);
+}
+
+// Создание удалённой задачи

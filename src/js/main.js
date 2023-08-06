@@ -7,7 +7,8 @@ import {
 	editingTask,
 	openEditingTaskModal,
 } from './editingTask.js';
-import { render } from './render.js';
+import { render, renderRemoteTasks } from './render.js';
+import { openSideBar, returningDeletedTask } from './sideBar.js';
 import { changePriority, openFunctional } from './taskFunctional.js';
 import {
 	cookieBtn,
@@ -16,6 +17,8 @@ import {
 	innersTasks,
 	modalBtnClose,
 	modalForm,
+	openSideBarBtn,
+	sideBarInnerTasks,
 } from './view.js';
 
 const isLocalStorage = JSON.parse(localStorage.getItem('tasksArray')) !== null;
@@ -25,6 +28,7 @@ let permissionCollectCookies =
 function loadingLocalData() {
 	if (isLocalStorage) {
 		render();
+		renderRemoteTasks();
 	}
 }
 
@@ -86,4 +90,12 @@ modalForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	editingTask(e);
+});
+
+openSideBarBtn.addEventListener('click', () => {
+	openSideBar();
+});
+
+sideBarInnerTasks.addEventListener('click', (e) => {
+	returningDeletedTask(e);
 });

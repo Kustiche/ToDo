@@ -6,3 +6,9 @@ export const cookieMessage = document.querySelector('.cookies');
 export const cookieBtn = document.querySelector('.cookies__btn');
 export const modalForm = document.querySelector('.modal__form');
 export const modalBtnClose = document.querySelector('.modal__btn-close');
+export const openSideBarBtn = document.querySelector('.sidebar__btn');
+export const sideBar = document.querySelector('.sidebar');
+export const sideBarInnerTasks = document.querySelector(
+	'.sidebar__inner-tasks'
+);
+export const templateRemoteTask = document.getElementById('remoteTask');

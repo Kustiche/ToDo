@@ -1,6 +1,8 @@
 import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
 
+// Открытие функционала
+
 export function openFunctional(e) {
 	const isBtnFunctional =
 		e.target.className === 'todo__inner-functional' ||
@@ -18,6 +20,10 @@ export function openFunctional(e) {
 	}
 }
 
+// Открытие функционала
+
+// Смена приоритета задачи
+
 export function changePriority(e) {
 	const task = e.target.closest('.todo__task');
 	const btnsPriorities = task.querySelectorAll('.todo__btn-prority');
@@ -31,3 +37,5 @@ export function changePriority(e) {
 		}
 	});
 }
+
+// Смена приоритета задачи

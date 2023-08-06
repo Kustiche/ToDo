@@ -4,6 +4,17 @@ export let objectCookies = {};
 let i = 0;
 const arrayAllCookies = document.cookie.split('; ');
 
+export function getCookies() {
+	const objectElement = arrayAllCookies[i].split('=');
+	objectCookies[objectElement[0]] = objectElement[1];
+	i++;
+	if (i < arrayAllCookies.length) {
+		getCookies();
+	}
+}
+
+// Запись куки
+
 export function recordCookie(e) {
 	const input = e.target;
 	const innerForm = input.closest('.todo__priorities');
@@ -20,14 +31,9 @@ export function recordCookie(e) {
 	}
 }
 
-export function getCookies() {
-	const objectElement = arrayAllCookies[i].split('=');
-	objectCookies[objectElement[0]] = objectElement[1];
-	i++;
-	if (i < arrayAllCookies.length) {
-		getCookies();
-	}
-}
+// Запись куки
+
+// Использование куки
 
 export function useCookie() {
 	getCookies();
@@ -49,3 +55,5 @@ export function useCookie() {
 		}
 	});
 }
+
+// Использование куки
