@@ -10,8 +10,8 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ToDo</title>
-		<script type="module" crossorigin src="./assets/index-fd180f3b.js"></script>
-		<link rel="stylesheet" href="./assets/index-5e5810bc.css">
+		<script type="module" crossorigin src="./assets/index-555471f2.js"></script>
+		<link rel="stylesheet" href="./assets/index-542aca20.css">
 	</head>
 	<body>
 		<section class="todo">
@@ -51,14 +51,25 @@
 				</div>
 			</div>
 		</section>
+		<div class="sidebar">
+			<button class="sidebar__btn btn-reset"></button>
+			<h2 class="sidebar__subtitle">Удалённые задачи</h2>
+			<div class="sidebar__inner-tasks">
+				<div class="sidebar__task">
+					<button class="sidebar__btn-return btn-reset"></button>
+					<p class="sidebar__text">Купить соус к салату</p>
+					<span class="sidebar__time">06.08.23</span>
+				</div>
+			</div>
+		</div>
 		<template id="task">
 			<div class="todo__task">
 				<div class="todo__task-left">
 					<input class="todo__btn btn-reset" type="checkbox" />
-					<p class="todo__text">Проведать друзей</p>
+					<p class="todo__text"></p>
 				</div>
 				<div class="todo__task-right">
-					<span class="todo__task-time">12.02.23</span>
+					<span class="todo__task-time"></span>
 					<button class="todo__btn-delete btn-reset"></button>
 					<div class="todo__inner-functional">
 						<button class="todo__btn-functional btn-reset"></button>
@@ -77,6 +88,13 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</template>
+		<template id="remoteTask">
+			<div class="sidebar__task">
+				<button class="sidebar__btn-return btn-reset"></button>
+				<p class="sidebar__text"></p>
+				<span class="sidebar__time"></span>
 			</div>
 		</template>
 		<dialog class="modal-editing-task modal" id="modalTaskEditing">
