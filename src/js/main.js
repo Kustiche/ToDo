@@ -21,15 +21,12 @@ import {
 	sideBarInnerTasks,
 } from './view.js';
 
-const isLocalStorage = JSON.parse(localStorage.getItem('tasksArray')) !== null;
 let permissionCollectCookies =
 	JSON.parse(localStorage.getItem('permissionCollectCookies')) ?? false;
 
 function loadingLocalData() {
-	if (isLocalStorage) {
-		render();
-		renderRemoteTasks();
-	}
+	render();
+	renderRemoteTasks();
 }
 
 function activationPermissionCookie() {

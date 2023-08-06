@@ -18,11 +18,12 @@ export function getCookies() {
 export function recordCookie(e) {
 	const input = e.target;
 	const innerForm = input.closest('.todo__priorities');
-	const prioritet = innerForm.querySelector('.todo__subtitle');
+	const priority = innerForm.querySelector('.todo__subtitle');
+	const isPriority = priority.textContent === 'Высокий приоритет';
 	const date = new Date();
 	date.setTime(date.getTime() + 7 * 24 * 60 * 60 * 1000);
 
-	if (prioritet.textContent === 'Высокий приоритет') {
+	if (isPriority) {
 		document.cookie =
 			`highPriorityTask=${input.value}; secure; expires=` + date.toUTCString();
 	} else {
@@ -39,18 +40,18 @@ export function useCookie() {
 	getCookies();
 
 	inputs.forEach((item) => {
-		const innerPrioritet = item.closest('.todo__priorities');
-		const prioritet = innerPrioritet.querySelector('.todo__subtitle');
+		const innerPriority = item.closest('.todo__priorities');
+		const priority = innerPriority.querySelector('.todo__subtitle');
+		const isHighPriority =
+			priority.textContent === 'Высокий приоритет' &&
+			objectCookies.highPriorityTask !== undefined;
+		const isLowPriority =
+			priority.textContent === 'Низкий приоритет' &&
+			objectCookies.lowPriorityTask !== undefined;
 
-		if (
-			prioritet.textContent === 'Высокий приоритет' &&
-			objectCookies.highPriorityTask !== undefined
-		) {
+		if (isHighPriority) {
 			item.value = objectCookies.highPriorityTask;
-		} else if (
-			prioritet.textContent === 'Низкий приоритет' &&
-			objectCookies.lowPriorityTask !== undefined
-		) {
+		} else if (isLowPriority) {
 			item.value = objectCookies.lowPriorityTask;
 		}
 	});

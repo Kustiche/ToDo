@@ -5,7 +5,9 @@ import { tasksArray } from './tasksArray.js';
 // Удаление задачи
 
 export function deleteTask(e) {
-	if (e.target.className === 'todo__btn-delete btn-reset') {
+	const isBtnDelete = e.target.className === 'todo__btn-delete btn-reset';
+
+	if (isBtnDelete) {
 		const task = e.target.closest('.todo__task');
 
 		remoteTasksArray.push(tasksArray[Number(task.dataset.index)]);
@@ -13,6 +15,7 @@ export function deleteTask(e) {
 
 		render();
 		renderRemoteTasks();
+
 		localStorage.setItem('remoteTasksArray', JSON.stringify(remoteTasksArray));
 		localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 	}

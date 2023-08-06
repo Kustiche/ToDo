@@ -46,7 +46,9 @@ export function editingTask(e) {
 	tasksArray[indexTask].time = time;
 
 	render();
+
 	window.modalTaskEditing.close();
+
 	localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 }
 

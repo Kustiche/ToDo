@@ -11,8 +11,9 @@ export function openFunctional(e) {
 	if (isBtnFunctional) {
 		const innerFunctional = e.target.closest('.todo__inner-functional');
 		const functional = innerFunctional.querySelector('.todo__functional');
+		const isFunctional = functional.style.display !== 'flex';
 
-		if (functional.style.display !== 'flex') {
+		if (isFunctional) {
 			functional.style.display = 'flex';
 		} else {
 			functional.style.display = null;

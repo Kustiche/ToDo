@@ -23,8 +23,9 @@ export function openSideBar() {
 
 export function returningDeletedTask(e) {
 	const remoteTask = e.target.closest('.sidebar__task');
+	const isSidebarInnerTasks = e.target.className !== 'sidebar__inner-tasks';
 
-	if (e.target.className !== 'sidebar__inner-tasks') {
+	if (isSidebarInnerTasks) {
 		const btnBack = remoteTask.querySelector('.sidebar__btn-return');
 		const isBtnBack = e.target === btnBack;
 

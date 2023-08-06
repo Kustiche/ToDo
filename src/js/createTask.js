@@ -24,8 +24,10 @@ export function addTaskArray(e) {
 	const subtitle = inner.querySelector('.todo__subtitle');
 	const input = form.querySelector('.form__input-text');
 	const innerInput = form.querySelector('.form__inner-input');
+	const isInputValue = input.value !== '';
+	const isSubtitlePriority = subtitle.textContent === 'Высокий приоритет';
 
-	if (input.value !== '') {
+	if (isInputValue) {
 		const newTask = new Task(input.value, subtitle.textContent);
 
 		tasksArray.push(newTask);
@@ -40,11 +42,11 @@ export function addTaskArray(e) {
 		innerInput.classList.remove('inner-input--padding-error');
 		form.classList.remove('form--padding-error');
 
-		if (subtitle.textContent === 'Высокий приоритет') {
+		if (isSubtitlePriority) {
 			document.cookie = `highPriorityTask=${
 				objectCookies.highPriorityTask
 			}; secure; expires=${new Date(0)}`;
-		} else if (subtitle.textContent === 'Низкий приоритет') {
+		} else {
 			document.cookie = `lowPriorityTask=${
 				objectCookies.lowPriorityTask
 			}; secure; expires=${new Date(0)}`;
@@ -70,13 +72,16 @@ export function createTask(text, priority, time, index, status) {
 	innersTasks.forEach((inner) => {
 		const innerPriority = inner.closest('.todo__priorities');
 		const subtitle = innerPriority.querySelector('.todo__subtitle');
+		const isPriority = subtitle.textContent === priority;
 
-		if (subtitle.textContent === priority) {
+		if (isPriority) {
+			const isStatus = status === true;
+
 			task.dataset.index = index;
 			taskText.textContent = text;
 			taskTime.textContent = time;
 
-			if (status === true) {
+			if (isStatus) {
 				taskText.classList.add('todo__text--performed');
 				btnChangeStatus.checked = true;
 			} else {
