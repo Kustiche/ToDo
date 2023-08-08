@@ -20,7 +20,7 @@ import {
 	openSideBarBtn,
 	sideBarInnerTasks,
 } from './view.js';
-localStorage.clear();
+
 let permissionCollectCookies =
 	JSON.parse(localStorage.getItem('permissionCollectCookies')) ?? false;
 
