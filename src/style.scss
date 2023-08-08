@@ -510,9 +510,10 @@ body {
 	position: fixed;
 	top: 30px;
 	left: 30px;
+	transition: top 0.4s;
 
 	&--hidden {
-		display: none;
+		top: -200px;
 	}
 
 	&__text {
