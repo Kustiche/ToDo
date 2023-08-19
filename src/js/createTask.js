@@ -1,15 +1,10 @@
 import moment from 'moment/moment.js';
 import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
-import {
-	innersTasks,
-	sideBarInnerTasks,
-	templateRemoteTask,
-	templateTask,
-} from './view.js';
+import {innersTasks, sideBarInnerTasks, templateRemoteTask, templateTask} from './view.js';
 import { objectCookies } from './cookies.js';
 
-// Добавление задачи в массив
+/* Добавление задачи в массив */
 
 function Task(text, priority) {
 	this.text = text;
@@ -58,9 +53,9 @@ export function addTaskArray(e) {
 	}
 }
 
-// Добавление задачи в массив
+/* Добавление задачи в массив */
 
-// Создание задачи
+/* Создание задачи */
 
 export function createTask(text, priority, time, index, status) {
 	const item = templateTask.content.cloneNode(true);
@@ -94,9 +89,9 @@ export function createTask(text, priority, time, index, status) {
 	});
 }
 
-// Создание задачи
+/* Создание задачи */
 
-// Создание удалённой задачи
+/* Создание удалённой задачи */
 
 export function createRemoteTask(text, time, index) {
 	const item = templateRemoteTask.content.cloneNode(true);
@@ -111,4 +106,4 @@ export function createRemoteTask(text, time, index) {
 	sideBarInnerTasks.append(item);
 }
 
-// Создание удалённой задачи
+/* Создание удалённой задачи */

@@ -1,28 +1,14 @@
-import { changeStatusTask } from './changeStatusTask.js';
-import { recordCookie, useCookie } from './cookies.js';
-import { addTaskArray } from './createTask.js';
-import { deleteTask } from './deleteTask.js';
-import {
-	closeEditingTaskModal,
-	editingTask,
-	openEditingTaskModal,
-} from './editingTask.js';
-import { render, renderRemoteTasks } from './render.js';
-import { openSideBar, returningDeletedTask } from './sideBar.js';
-import { changePriority, openFunctional } from './taskFunctional.js';
-import {
-	cookieBtn,
-	cookieMessage,
-	forms,
-	innersTasks,
-	modalBtnClose,
-	modalForm,
-	openSideBarBtn,
-	sideBarInnerTasks,
-} from './view.js';
+import {changeStatusTask} from './changeStatusTask.js';
+import {recordCookie, useCookie} from './cookies.js';
+import {addTaskArray} from './createTask.js';
+import {deleteTask} from './deleteTask.js';
+import {closeEditingTaskModal, editingTask, openEditingTaskModal} from './editingTask.js';
+import {render, renderRemoteTasks} from './render.js';
+import {openSideBar, returningDeletedTask} from './sideBar.js';
+import {changePriority, openFunctional} from './taskFunctional.js';
+import {cookieBtn, cookieMessage, forms, innersTasks, modalBtnClose, modalForm, openSideBarBtn, sideBarInnerTasks} from './view.js';
 
-let permissionCollectCookies =
-	JSON.parse(localStorage.getItem('permissionCollectCookies')) ?? false;
+let permissionCollectCookies = JSON.parse(localStorage.getItem('permissionCollectCookies')) ?? false;
 
 function loadingLocalData() {
 	render();
@@ -33,10 +19,7 @@ function activationPermissionCookie() {
 	cookieMessage.classList.add('cookies--hidden');
 
 	permissionCollectCookies = true;
-	localStorage.setItem(
-		'permissionCollectCookies',
-		JSON.stringify(permissionCollectCookies)
-	);
+	localStorage.setItem('permissionCollectCookies', JSON.stringify(permissionCollectCookies));
 }
 
 function activationCollectCookie() {

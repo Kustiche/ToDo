@@ -13,7 +13,7 @@ export function getCookies() {
 	}
 }
 
-// Запись куки
+/* Запись куки */
 
 export function recordCookie(e) {
 	const input = e.target;
@@ -32,9 +32,9 @@ export function recordCookie(e) {
 	}
 }
 
-// Запись куки
+/* Запись куки */
 
-// Использование куки
+/* Использование куки */
 
 export function useCookie() {
 	getCookies();
@@ -57,4 +57,4 @@ export function useCookie() {
 	});
 }
 
-// Использование куки
+/* Использование куки */

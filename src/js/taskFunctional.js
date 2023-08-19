@@ -1,7 +1,7 @@
 import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
 
-// Открытие функционала
+/* Открытие функционала */
 
 export function openFunctional(e) {
 	const isBtnFunctional =
@@ -21,9 +21,9 @@ export function openFunctional(e) {
 	}
 }
 
-// Открытие функционала
+/* Открытие функционала */
 
-// Смена приоритета задачи
+/* Смена приоритета задачи */
 
 export function changePriority(e) {
 	const task = e.target.closest('.todo__task');
@@ -39,4 +39,4 @@ export function changePriority(e) {
 	});
 }
 
-// Смена приоритета задачи
+/* Смена приоритета задачи */

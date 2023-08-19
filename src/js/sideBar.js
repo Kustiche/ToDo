@@ -5,7 +5,7 @@ import { sideBar } from './view.js';
 export const remoteTasksArray =
 	JSON.parse(localStorage.getItem('remoteTasksArray')) ?? [];
 
-// Открытие боковой панели
+/* Открытие боковой панели */
 
 export function openSideBar() {
 	const isOpenSideBar = sideBar.style.right !== '0px';
@@ -17,9 +17,9 @@ export function openSideBar() {
 	}
 }
 
-// Открытие боковой панели
+/* Открытие боковой панели */
 
-// Возвращение удалённой задачи
+/* Возвращение удалённой задачи */
 
 export function returningDeletedTask(e) {
 	const remoteTask = e.target.closest('.sidebar__task');
@@ -36,13 +36,10 @@ export function returningDeletedTask(e) {
 			render();
 			renderRemoteTasks();
 
-			localStorage.setItem(
-				'remoteTasksArray',
-				JSON.stringify(remoteTasksArray)
-			);
+			localStorage.setItem('remoteTasksArray', JSON.stringify(remoteTasksArray));
 			localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 		}
 	}
 }
 
-// Возвращение удалённой задачи
+/* Возвращение удалённой задачи */

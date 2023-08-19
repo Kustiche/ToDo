@@ -3,7 +3,7 @@ import { remoteTasksArray } from './sideBar.js';
 import { tasksArray } from './tasksArray.js';
 import { innersTasks, sideBarInnerTasks } from './view.js';
 
-// Рендер
+/* Рендер */
 
 export function render() {
 	let index = 0;
@@ -17,9 +17,9 @@ export function render() {
 	});
 }
 
-// Рендер
+/* Рендер */
 
-// Рендер удалённых задач
+/* Рендер удалённых задач */
 
 export function renderRemoteTasks() {
 	let index = 0;
@@ -31,4 +31,4 @@ export function renderRemoteTasks() {
 	});
 }
 
-// Рендер удалённых задач
+/* Рендер удалённых задач */

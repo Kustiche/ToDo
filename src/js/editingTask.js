@@ -4,15 +4,15 @@ import { tasksArray } from './tasksArray.js';
 
 let indexTask = 0;
 
-// Закрытие модального окна для редактирования задач
+/* Закрытие модального окна для редактирования задач */
 
 export function closeEditingTaskModal() {
 	window.modalTaskEditing.close();
 }
 
-// Закрытие модального окна для редактирования задач
+/* Закрытие модального окна для редактирования задач */
 
-// Открытие модального окна для редактирования задач
+/* Открытие модального окна для редактирования задач */
 
 export function openEditingTaskModal(e) {
 	const isTask =
@@ -34,9 +34,9 @@ export function openEditingTaskModal(e) {
 	}
 }
 
-// Открытие модального окна для редактирования задач
+/* Открытие модального окна для редактирования задач */
 
-// Редактирование задачи
+/* Редактирование задачи */
 
 export function editingTask(e) {
 	const input = e.target.querySelector('.modal__input-text');
@@ -52,4 +52,4 @@ export function editingTask(e) {
 	localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 }
 
-// Редактирование задачи
+/* Редактирование задачи */

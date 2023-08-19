@@ -1,7 +1,7 @@
 import { render } from './render.js';
 import { tasksArray } from './tasksArray.js';
 
-// Изменение статуса задачи (Выполнена/не выполнена)
+/* Изменение статуса задачи (Выполнена/не выполнена) */
 
 export function changeStatusTask(e) {
 	const btnChangeStatus = e.target;
@@ -24,4 +24,4 @@ export function changeStatusTask(e) {
 	}
 }
 
-// Изменение статуса задачи (Выполнена/не выполнена)
+/* Изменение статуса задачи (Выполнена/не выполнена) */

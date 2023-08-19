@@ -1,8 +1,8 @@
-import { render, renderRemoteTasks } from './render.js';
-import { remoteTasksArray } from './sideBar.js';
-import { tasksArray } from './tasksArray.js';
+import {render, renderRemoteTasks} from './render.js';
+import {remoteTasksArray} from './sideBar.js';
+import {tasksArray} from './tasksArray.js';
 
-// Удаление задачи
+/* Удаление задачи */
 
 export function deleteTask(e) {
 	const isBtnDelete = e.target.className === 'todo__btn-delete btn-reset';
@@ -21,4 +21,4 @@ export function deleteTask(e) {
 	}
 }
 
-// Удаление задачи
+/* Удаление задачи */
