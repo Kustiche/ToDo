@@ -378,25 +378,27 @@ body {
 	position: fixed;
 	top: 0;
 	right: -21%;
+	transition: right 0.4s;
 
 	&__btn {
-		width: 40px;
-		height: 40px;
+		width: 80px;
+		height: 80px;
 		background-color: $mine-shaft;
 		position: absolute;
-		top: 0;
-		left: -40px;
+		top: 50%;
+		left: -80px;
 		border-radius: 20px 0 0 20px;
 
 		&::after,
 		&::before {
 			position: absolute;
 			content: '';
-			width: 15px;
+			width: 30px;
 			border-top: 2px solid $white;
 			top: 35%;
 			left: 25%;
 			transform: rotate(-45deg);
+			transition: transform 0.4s;
 		}
 
 		&::before {
@@ -404,7 +406,7 @@ body {
 			top: 60%;
 		}
 
-		&--open {
+		&.active {
 			&::after {
 				transform: rotate(45deg);
 			}
